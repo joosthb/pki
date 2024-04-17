@@ -31,12 +31,11 @@ openssl ca -batch -in data/intermediate_ca/intermediate.csr \
 openssl req -newkey rsa:2048 -noenc \
     -keyout data/leaf.key \
     -out data/leaf.csr \
-    -subj "/C=NL/CN=Test Leaf"
+    -subj "/C=NL/CN=localhost"
 openssl ca -batch -in data/leaf.csr \
     -out data/leaf.pem \
     -config intermediate.config -days 365
 
-# TODO expand fields later: "/C=NL/ST=GE/L=Nijmegen/O=server/CN=server.localhost"
 
 # Verify certs
 openssl verify -x509_strict -CAfile data/root_ca/root.pem -untrusted data/intermediate_ca/intermediate.pem data/leaf.pem

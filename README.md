@@ -92,3 +92,9 @@ openssl verify
     -untrusted intermediate.pem # file with all intermediates
     leaf.pem                    # leaf certificate to verify
 ```
+
+
+## Test connection from client
+```
+curl -v --cacert data/intermediate_ca/intermediate.pem https://localhost/
+```
