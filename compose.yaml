@@ -10,4 +10,6 @@ services:
     environment:
       - LOG_LEVEL_APP=INFO
       - LOG_LEVEL_SERVER=INFO
-      # - TLS_SETUP_ENABLED=simple
+    env_file:
+      - .env
+  

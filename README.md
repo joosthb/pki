@@ -9,7 +9,10 @@ Features:
 
 
 # Setup
+- Configure .env
+
 Start with `docker compose up -d` and follow deployment with `docker compose logs -f` until initial login info is presented like:
+
 ```
 jadsklsfjaskldfj
 ```
