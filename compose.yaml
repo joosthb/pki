@@ -1,6 +1,7 @@
 version: '3'
 services:
-  ejbca: 
+  ejbca:
+    hostname: ejbca
     image : keyfactor/ejbca-ce
     ports : 
       - 80:8080
@@ -11,6 +12,4 @@ services:
       - LOG_LEVEL_APP=INFO
       - LOG_LEVEL_SERVER=INFO
       - TLS_SETUP_ENABLED=true
-    env_file:
-      - .env
   
